@@ -15,4 +15,8 @@ public interface DeckService {
     Deck addCard(String id, Card card);
     Deck editCard(String id, Card card);
     Deck removeCard(String id, Long cardId);
+
+    void deleteAll();
+
+    Deck getDeckByPermaLink(String permaLink);
 }

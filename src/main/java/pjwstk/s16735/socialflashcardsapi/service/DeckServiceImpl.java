@@ -20,17 +20,24 @@ public class DeckServiceImpl implements DeckService {
 
     @Override
     public List<Deck> getAllDecks() {
-        Deck d = deckRepository.findDeckByPermaLinkEquals("string");
         return deckRepository.findAll();
     }
 
     @Override
     public Deck getDeckById(String id) {
-        Deck deck = deckRepository.findById(id).orElseThrow(() -> {throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Deck not found");});
+//        Deck deck = deckRepository.findById(id).orElseThrow(() -> {throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Deck not found");});
+        Deck deck = findDeckById(id);
         return deck;
     }
 
-
+    @Override
+    public Deck getDeckByPermaLink(String permaLink) {
+        Deck deck = deckRepository.findDeckByPermaLinkEquals(permaLink);
+        if (deck == null) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Deck " + permaLink + " doesn't exist");
+        }
+        return deckRepository.findDeckByPermaLinkEquals(permaLink);
+    }
 
     @Override
     public Deck createDeck(Deck deck) {
@@ -92,13 +99,18 @@ public class DeckServiceImpl implements DeckService {
         return deck;
     }
 
+    @Override
+    public void deleteAll() {
+        deckRepository.deleteAll();
+    }
+
     private void updateCard(Card cardOld, Card cardNew) {
         cardNew.setFront(cardNew.getFront());
         cardOld.setBack(cardNew.getBack());
     }
 
     private Deck findDeckById(String id) {
-        return deckRepository.findById(id).orElseThrow(() -> {throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Deck doesn't exist");});
+        return deckRepository.findById(id).orElseThrow(() -> {throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Deck not found");});
     }
 
     private String createPermaLinkFromName(String name) {

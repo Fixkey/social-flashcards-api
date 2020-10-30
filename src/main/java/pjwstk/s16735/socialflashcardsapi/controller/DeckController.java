@@ -26,11 +26,14 @@ public class DeckController {
         return deckService.getAllDecks();
     }
 
-    
-
     @GetMapping("/{id}")
     public Deck getDeckById(@PathVariable("id") final String id) {
         return deckService.getDeckById(id);
+    }
+
+    @GetMapping("/perma-link/{permaLink}")
+    public Deck getDeckByPermaLink(@PathVariable("permaLink") final String permaLink) {
+        return deckService.getDeckByPermaLink(permaLink);
     }
 
     @DeleteMapping("/{id}")
