@@ -1,5 +1,7 @@
 package pjwstk.s16735.socialflashcardsapi.service;
 
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
@@ -13,9 +15,14 @@ import java.util.List;
 @Service
 public class DeckServiceImpl implements DeckService {
     private DeckRepository deckRepository;
+    private MongoClient mongoClient;
 
-    public DeckServiceImpl(@Autowired DeckRepository deckRepository) {
+    public DeckServiceImpl(@Autowired DeckRepository deckRepository, @Autowired MongoClient mongoClient) {
         this.deckRepository = deckRepository;
+        this.mongoClient = mongoClient;
+        MongoDatabase database = mongoClient.getDatabase("social-flashcards");
+        var collectionT = database.getCollection("deck");
+        var docs = collectionT.countDocuments();
     }
 
     @Override

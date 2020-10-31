@@ -31,7 +31,7 @@ public class DeckServiceImplTest {
     @Test
     void createDeck() {
         DeckRepository deckRepository = mock(DeckRepository.class);
-        DeckService deckService = new DeckServiceImpl(deckRepository);
+        DeckService deckService = new DeckServiceImpl(deckRepository, null);
         Deck deck = new Deck();
         deck.setName("ABC DBC1 3");
         deckService.createDeck(deck);
