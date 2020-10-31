@@ -1,5 +1,6 @@
 package pjwstk.s16735.socialflashcardsapi.controller;
 
+import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +10,9 @@ import pjwstk.s16735.socialflashcardsapi.model.Deck;
 import pjwstk.s16735.socialflashcardsapi.repository.DeckRepository;
 import pjwstk.s16735.socialflashcardsapi.service.DeckService;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 @RestController
 @RequestMapping("dev")
@@ -25,15 +28,15 @@ public class DevController {
         deckService.deleteAll();
         Deck deck1 = new Deck();
         deck1.setName("Deck 1");
-        Card card1 = new Card();
-        Card card2 = new Card();
-        card1.setFront("Hello");
-        card1.setBack("Czesc");
-        card1.setId(1L);
-        card2.setFront("Bye");
-        card2.setBack("Pa");
-        card2.setId(2L);
-        deck1.setCards(Arrays.asList(card1, card2));
+        List<Card> list = new ArrayList<>();
+        for (long i = 1; i<50; i++) {
+            Card card = new Card();
+            card.setId(i);
+            card.setFront(RandomStringUtils.randomAlphabetic(5, 15));
+            card.setBack(RandomStringUtils.randomAlphabetic(5, 15));
+            list.add(card);
+        }
+        deck1.setCards(list);
         deckService.createDeck(deck1);
     }
 }
