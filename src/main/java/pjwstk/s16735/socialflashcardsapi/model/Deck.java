@@ -1,5 +1,6 @@
 package pjwstk.s16735.socialflashcardsapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 
 import java.util.ArrayList;
@@ -12,11 +13,14 @@ public class Deck {
     private String name;
     private String permaLink;
     private List<Card> cards = new ArrayList<>();
+    @JsonIgnore
+    private Long counter = 0L;
 
     public Deck() {
     }
 
     public void addCard(Card card) {
+        card.setId(counter++);
         cards.add(card);
     }
 

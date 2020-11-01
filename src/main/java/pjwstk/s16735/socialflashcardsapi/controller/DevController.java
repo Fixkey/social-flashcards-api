@@ -28,15 +28,14 @@ public class DevController {
         deckService.deleteAll();
         Deck deck1 = new Deck();
         deck1.setName("Deck 1");
-        List<Card> list = new ArrayList<>();
+//        List<Card> list = new ArrayList<>();
         for (long i = 1; i<50; i++) {
             Card card = new Card();
-            card.setId(i);
             card.setFront(RandomStringUtils.randomAlphabetic(5, 15));
             card.setBack(RandomStringUtils.randomAlphabetic(5, 15));
-            list.add(card);
+            deck1.addCard(card);
         }
-        deck1.setCards(list);
+//        deck1.setCards(list);
         deckService.createDeck(deck1);
     }
 }
