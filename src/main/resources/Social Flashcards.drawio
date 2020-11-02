@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-10-30T19:47:56.645Z" agent="5.0 (Windows)" etag="XrojJyBwHTG-JbFkN82Q" version="13.8.7" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-02T12:54:28.340Z" agent="5.0 (Windows)" etag="3NWUWtvhJ65nag_cgBlc" version="13.8.8" type="github">
   <diagram id="3nhI2OAICTKzq8g6tCAF" name="Page-1">
-    <mxGraphModel dx="2998" dy="1223" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="2912" dy="1163" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -553,10 +553,10 @@
         <mxCell id="uCags2NcZXX_CahTgazp-198" value="Learn" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#1CA5B8;fontColor=#FFFFFF;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;" parent="uCags2NcZXX_CahTgazp-82" vertex="1">
           <mxGeometry x="90" y="230" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="uCags2NcZXX_CahTgazp-199" value="Test (0 reviews)" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#1CA5B8;fontColor=#FFFFFF;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;" parent="uCags2NcZXX_CahTgazp-82" vertex="1">
+        <mxCell id="uCags2NcZXX_CahTgazp-199" value="Review (0)" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#1CA5B8;fontColor=#FFFFFF;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;" parent="uCags2NcZXX_CahTgazp-82" vertex="1">
           <mxGeometry x="295" y="230" width="120" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="uCags2NcZXX_CahTgazp-200" value="Cram" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#1CA5B8;fontColor=#FFFFFF;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;" parent="uCags2NcZXX_CahTgazp-82" vertex="1">
+        <mxCell id="uCags2NcZXX_CahTgazp-200" value="Test" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#1CA5B8;fontColor=#FFFFFF;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;" parent="uCags2NcZXX_CahTgazp-82" vertex="1">
           <mxGeometry x="520" y="230" width="120" height="40" as="geometry" />
         </mxCell>
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-126" value="Add" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#343A40;fontColor=#FFFFFF;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;" parent="uCags2NcZXX_CahTgazp-82" vertex="1">
@@ -689,7 +689,7 @@
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-26" value="Shortkey: E" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="aAj3cFeVH4U1j7wDyJC4-1" vertex="1">
           <mxGeometry x="590" y="233.5" width="80" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="UyKccX1kByqlLl-h6edC-1" value="Finish" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="aAj3cFeVH4U1j7wDyJC4-1">
+        <mxCell id="UyKccX1kByqlLl-h6edC-1" value="Finish" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="aAj3cFeVH4U1j7wDyJC4-1" vertex="1">
           <mxGeometry x="10" y="120" width="50" height="20" as="geometry" />
         </mxCell>
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-7" value="Review (all)" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
@@ -789,7 +789,7 @@
           <mxGeometry x="280" y="320" width="150" height="30" as="geometry" />
         </mxCell>
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-130" value="EDIT/ADD" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=none;strokeWidth=1;fillColor=#343A40;fontColor=#FFFFFF;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;" parent="aAj3cFeVH4U1j7wDyJC4-50" vertex="1">
-          <mxGeometry x="530" y="430" width="110" height="40" as="geometry" />
+          <mxGeometry x="307.5" y="370" width="85" height="35" as="geometry" />
         </mxCell>
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-131" value="&lt;b&gt;Editing card #34123&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="aAj3cFeVH4U1j7wDyJC4-50" vertex="1">
           <mxGeometry x="295" y="200" width="130" height="20" as="geometry" />
@@ -855,29 +855,20 @@
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-152" value="Mongodb schemas:" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="-825" y="170" width="120" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="aAj3cFeVH4U1j7wDyJC4-153" value="&lt;div align=&quot;left&quot;&gt;Deck: {&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; id: Id&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; name: String&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; category: CategoryId&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; subject: SubjectId&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; addedBy: UserId&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; keys: [String]&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; owners: [UserId]&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; permaLink: String&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; cards: [Card]&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-820" y="190" width="130" height="160" as="geometry" />
+        <mxCell id="aAj3cFeVH4U1j7wDyJC4-153" value="&lt;div align=&quot;left&quot;&gt;Deck: {&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; id: Id&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; name: String&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; category: CategoryId&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; subject: SubjectId&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; addedBy: UserId&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; lastUpdated: Date&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; keys: [String]&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; owners: [String: username]&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; permaLink: String&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; cards: [Card]&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="-830" y="190" width="170" height="170" as="geometry" />
         </mxCell>
-        <mxCell id="aAj3cFeVH4U1j7wDyJC4-154" value="&lt;div align=&quot;left&quot;&gt;Card: {&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; id: Id&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; front: String&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; back: String&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; addedBy: UserId&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; keys: [String]&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; type: TypeId&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-650" y="200" width="110" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="aAj3cFeVH4U1j7wDyJC4-155" value="&lt;div align=&quot;left&quot;&gt;Type: {&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; id: Id&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; type: String&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-500" y="200" width="80" height="60" as="geometry" />
+        <mxCell id="aAj3cFeVH4U1j7wDyJC4-154" value="&lt;div align=&quot;left&quot;&gt;Card: {&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; id: Long&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; front: String&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; back: String&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; addedBy: UserId&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; lastUpdated: Date&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; keys: [String]&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="-635" y="180" width="120" height="120" as="geometry" />
         </mxCell>
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-156" value="&lt;div align=&quot;left&quot;&gt;Category: {&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; id: Id&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; category: String&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; subjects: [&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; SubjectId&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; ]&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-420" y="200" width="110" height="100" as="geometry" />
+          <mxGeometry x="-490" y="180" width="110" height="100" as="geometry" />
         </mxCell>
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-157" value="&lt;div align=&quot;left&quot;&gt;Subject: {&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; id: Id&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; subject: String&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; category: CategoryId&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; decks: [Deck] //public ones&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-280" y="200" width="170" height="90" as="geometry" />
+          <mxGeometry x="-350" y="180" width="170" height="90" as="geometry" />
         </mxCell>
-        <mxCell id="aAj3cFeVH4U1j7wDyJC4-158" value="&lt;div align=&quot;left&quot;&gt;User: {&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; id: Id&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; name: String&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; password: Hash&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; ?sessions: [session]&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; decksProgress: [ProgressDeck]&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; friends: [UserId]&lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-830" y="370" width="200" height="120" as="geometry" />
-        </mxCell>
-        <mxCell id="aAj3cFeVH4U1j7wDyJC4-159" value="&lt;div align=&quot;left&quot;&gt;ProgressDeck: {&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; id: Id&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; cards: [ProgressCard]&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-610" y="370" width="140" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="aAj3cFeVH4U1j7wDyJC4-160" value="&lt;div align=&quot;left&quot;&gt;ProgressCard: {&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; id: Id&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; card: cardId&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; note: String&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; learned: boolean&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; answers: [{&lt;div align=&quot;left&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; correct: boolean&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; date: Date&lt;br&gt;&lt;/div&gt;&amp;nbsp; }]&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-430" y="360" width="120" height="150" as="geometry" />
+        <mxCell id="aAj3cFeVH4U1j7wDyJC4-158" value="&lt;div align=&quot;left&quot;&gt;User: {&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; id: Id&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; name: String&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; password: Hash&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;&amp;nbsp; progress: String&lt;br&gt;&lt;/div&gt;&amp;nbsp; ?friends: [String: username]&lt;br&gt;&lt;div align=&quot;left&quot;&gt;}&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="-825" y="380" width="170" height="100" as="geometry" />
         </mxCell>
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-162" value="&lt;div&gt;Iterations:&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="-705" y="845" width="70" height="30" as="geometry" />
@@ -892,10 +883,10 @@
           <mxGeometry x="-780" y="890" width="200" height="20" as="geometry" />
         </mxCell>
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-165" value="Subjects, Categories, Learn" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-755" y="990" width="170" height="20" as="geometry" />
+          <mxGeometry x="-765" y="1070" width="170" height="20" as="geometry" />
         </mxCell>
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-167" value="Users (registration, login, friends, deck ownership), ReviewAll " style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-845" y="1080" width="350" height="20" as="geometry" />
+          <mxGeometry x="-830" y="990" width="350" height="20" as="geometry" />
         </mxCell>
         <mxCell id="aAj3cFeVH4U1j7wDyJC4-169" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -906,8 +897,17 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="aAj3cFeVH4U1j7wDyJC4-170" value="&lt;div align=&quot;left&quot;&gt;Potential features:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Anki import/export&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Custom SRS config&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Cram&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-360" y="835" width="130" height="60" as="geometry" />
+        <mxCell id="aAj3cFeVH4U1j7wDyJC4-170" value="&lt;div align=&quot;left&quot;&gt;Potential features:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Anki import/export&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Custom SRS config&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Cram/Test&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Different card types&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Rich text editing&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Deck difficulty&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="-360" y="815" width="130" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="RIK2KA0U3uTu3CmKvBSZ-1" value="LocalStorage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="-825" y="520" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RIK2KA0U3uTu3CmKvBSZ-2" value="JWT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="-810" y="550" width="40" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="RIK2KA0U3uTu3CmKvBSZ-3" value="Progress: {&lt;br&gt;&quot;deck_name&quot; : {&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; ?config: { }&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1: {&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; correct: 3,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; wrong: 2,&lt;br&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; lastAnswered: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; nextReview: Date&lt;br&gt;&lt;/div&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; completed: false&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; },&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 2: {&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; correct: 6,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; wrong: 1,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; lastAnswered: Date,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; completed: true&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; },&lt;br&gt;&amp;nbsp; }&lt;br&gt;}" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+          <mxGeometry x="-725" y="550" width="140" height="260" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
