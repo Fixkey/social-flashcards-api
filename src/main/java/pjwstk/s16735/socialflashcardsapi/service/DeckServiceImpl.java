@@ -78,6 +78,9 @@ public class DeckServiceImpl implements DeckService {
 
     @Override
     public Deck editCard(String id, Card card) {
+        if (card.getId() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Card must have id");
+        }
         Deck deck = findDeckById(id);
         deck.getCards().forEach(e -> {
             if (e.getId().equals(card.getId())) {
@@ -105,7 +108,7 @@ public class DeckServiceImpl implements DeckService {
     }
 
     private void updateCard(Card cardOld, Card cardNew) {
-        cardNew.setFront(cardNew.getFront());
+        cardOld.setFront(cardNew.getFront());
         cardOld.setBack(cardNew.getBack());
     }
 
