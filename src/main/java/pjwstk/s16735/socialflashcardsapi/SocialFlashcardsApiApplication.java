@@ -10,8 +10,6 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
 public class SocialFlashcardsApiApplication {
-    @Value("${config.frontendUrl}")
-    private String frontendUrl;
 
     public static void main(String[] args) {
         SpringApplication.run(SocialFlashcardsApiApplication.class, args);

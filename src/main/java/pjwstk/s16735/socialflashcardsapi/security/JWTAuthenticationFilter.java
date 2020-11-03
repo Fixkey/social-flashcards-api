@@ -2,6 +2,7 @@ package pjwstk.s16735.socialflashcardsapi.security;
 
 import com.auth0.jwt.JWT;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.google.common.collect.ImmutableMap;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -52,5 +53,9 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                 .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .sign(HMAC512(SECRET.getBytes()));
         response.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
+        response.setContentType("application/json");
+        response.setCharacterEncoding("UTF-8");
+        String json = new ObjectMapper().writeValueAsString(ImmutableMap.of("token", token));
+        response.getWriter().write(json);
     }
 }
