@@ -48,14 +48,15 @@ public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilte
 
     @Override
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authResult) throws IOException, ServletException {
+        String username = ((User) authResult.getPrincipal()).getUsername();
         String token = JWT.create()
-                .withSubject(((User) authResult.getPrincipal()).getUsername())
+                .withSubject(username)
                 .withExpiresAt(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
                 .sign(HMAC512(SECRET.getBytes()));
         response.addHeader(HEADER_STRING, TOKEN_PREFIX + token);
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
-        String json = new ObjectMapper().writeValueAsString(ImmutableMap.of("token", token));
+        String json = new ObjectMapper().writeValueAsString(ImmutableMap.of("token", token, "username", username));
         response.getWriter().write(json);
     }
 }

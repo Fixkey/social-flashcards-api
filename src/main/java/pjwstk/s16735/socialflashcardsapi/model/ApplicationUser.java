@@ -1,9 +1,11 @@
 package pjwstk.s16735.socialflashcardsapi.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 
 public class ApplicationUser {
     @Id
+    @JsonIgnore
     private String id;
     private String username;
     private String password;
