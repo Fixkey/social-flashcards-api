@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2020-11-02T12:54:28.340Z" agent="5.0 (Windows)" etag="3NWUWtvhJ65nag_cgBlc" version="13.8.8" type="github">
+<mxfile host="app.diagrams.net" modified="2020-11-08T13:48:23.931Z" agent="5.0 (Windows)" etag="sSisTYh40b9r71CUaZK9" version="13.9.2" type="github">
   <diagram id="3nhI2OAICTKzq8g6tCAF" name="Page-1">
-    <mxGraphModel dx="2912" dy="1163" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1952" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -897,16 +897,16 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="aAj3cFeVH4U1j7wDyJC4-170" value="&lt;div align=&quot;left&quot;&gt;Potential features:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Anki import/export&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Custom SRS config&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Cram/Test&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Different card types&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Rich text editing&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Deck difficulty&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
-          <mxGeometry x="-360" y="815" width="130" height="100" as="geometry" />
+        <mxCell id="aAj3cFeVH4U1j7wDyJC4-170" value="&lt;div align=&quot;left&quot;&gt;Potential features:&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Anki import/export&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Custom SRS config&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Cram/Test&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Different card types&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Rich text editing&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Deck difficulty&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;- Server field errors, setError &lt;br&gt;&lt;/div&gt;&lt;div align=&quot;left&quot;&gt;react hook form&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
+          <mxGeometry x="-360" y="800" width="170" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="RIK2KA0U3uTu3CmKvBSZ-1" value="LocalStorage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="RIK2KA0U3uTu3CmKvBSZ-1" value="LocalStorage" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="-825" y="520" width="90" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="RIK2KA0U3uTu3CmKvBSZ-2" value="JWT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="RIK2KA0U3uTu3CmKvBSZ-2" value="JWT" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="-810" y="550" width="40" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="RIK2KA0U3uTu3CmKvBSZ-3" value="Progress: {&lt;br&gt;&quot;deck_name&quot; : {&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; ?config: { }&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1: {&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; correct: 3,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; wrong: 2,&lt;br&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; lastAnswered: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; nextReview: Date&lt;br&gt;&lt;/div&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; completed: false&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; },&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 2: {&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; correct: 6,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; wrong: 1,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; lastAnswered: Date,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; completed: true&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; },&lt;br&gt;&amp;nbsp; }&lt;br&gt;}" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" vertex="1" parent="1">
+        <mxCell id="RIK2KA0U3uTu3CmKvBSZ-3" value="Progress: {&lt;br&gt;&quot;deck_name&quot; : {&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; ?config: { }&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 1: {&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; correct: 3,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; wrong: 2,&lt;br&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; lastAnswered: Date,&lt;/div&gt;&lt;div&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; nextReview: Date&lt;br&gt;&lt;/div&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; completed: false&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; },&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; 2: {&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; correct: 6,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; wrong: 1,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; lastAnswered: Date,&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp; completed: true&lt;br&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp; },&lt;br&gt;&amp;nbsp; }&lt;br&gt;}" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;" parent="1" vertex="1">
           <mxGeometry x="-725" y="550" width="140" height="260" as="geometry" />
         </mxCell>
       </root>
