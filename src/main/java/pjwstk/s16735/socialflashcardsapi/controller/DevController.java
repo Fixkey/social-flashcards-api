@@ -48,7 +48,7 @@ public class DevController {
 
         applicationUserRepository.deleteAll();
         ApplicationUser user = new ApplicationUser();
-        user.setUsername("admin");
+        user.setUsername("administrator");
         user.setPassword(bCryptPasswordEncoder.encode("admin123"));
         applicationUserRepository.save(user);
     }

@@ -3,11 +3,20 @@ package pjwstk.s16735.socialflashcardsapi.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class ApplicationUser {
     @Id
     @JsonIgnore
     private String id;
+    @NotEmpty(message = "Username can't be empty")
+    @Pattern(regexp = "[a-zA-Z0-9]+", message = "No special characters")
+    @Size(min = 6, message = "Username must be at least 6 chars long")
     private String username;
+    @NotEmpty(message = "Password can't be empty")
+    @Size(min = 6, message = "Password must be at least 6 chars long")
     private String password;
 
     public ApplicationUser() {

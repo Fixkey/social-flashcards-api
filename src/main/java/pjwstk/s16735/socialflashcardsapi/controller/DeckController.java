@@ -3,6 +3,7 @@ package pjwstk.s16735.socialflashcardsapi.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import pjwstk.s16735.socialflashcardsapi.model.Card;
@@ -13,7 +14,7 @@ import pjwstk.s16735.socialflashcardsapi.service.DeckService;
 import java.util.List;
 
 @RestController
-@RequestMapping("/deck")
+@RequestMapping("/decks")
 public class DeckController {
     private DeckService deckService;
 
@@ -32,7 +33,7 @@ public class DeckController {
     }
 
     @GetMapping("/perma-link/{permaLink}")
-    public Deck getDeckByPermaLink(@PathVariable("permaLink") final String permaLink) {
+    public Deck getDeckByPermaLink(@PathVariable("permaLink") final String permaLink, Authentication authentication) {
         return deckService.getDeckByPermaLink(permaLink);
     }
 
