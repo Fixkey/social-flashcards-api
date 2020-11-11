@@ -23,49 +23,51 @@ public class DeckController {
     }
 
     @GetMapping("")
-    public List<Deck> getAllDecks() {
-        return deckService.getAllDecks();
+    public List<Deck> getAllDecks(Authentication authentication) {
+        return deckService.getAllDecks(extractUser(authentication));
     }
 
     @GetMapping("/{id}")
-    public Deck getDeckById(@PathVariable("id") final String id) {
-        return deckService.getDeckById(id);
+    public Deck getDeckById(@PathVariable("id") final String id, Authentication authentication) {
+        return deckService.getDeckById(id, extractUser(authentication));
     }
 
     @GetMapping("/perma-link/{permaLink}")
     public Deck getDeckByPermaLink(@PathVariable("permaLink") final String permaLink, Authentication authentication) {
-        return deckService.getDeckByPermaLink(permaLink);
+        return deckService.getDeckByPermaLink(permaLink, extractUser(authentication));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity removeDeckById(@PathVariable("id") final String id) {
-        deckService.removeDeckById(id);
-        return new ResponseEntity(HttpStatus.OK);
+    public void removeDeckById(@PathVariable("id") final String id, Authentication authentication) {
+        deckService.removeDeckById(id, extractUser(authentication));
     }
 
     @PostMapping("")
-    public Deck createDeck(@RequestBody Deck deck) {
-        deck.setId(null);
-        return deckService.createDeck(deck);
+    public Deck createDeck(@RequestBody Deck deck, Authentication authentication) {
+        return deckService.createDeck(deck, extractUser(authentication));
     }
 
     @PutMapping("")
-    public Deck editDeck(@RequestBody Deck deck) {
-        return deckService.editDeck(deck);
+    public Deck editDeck(@RequestBody Deck deck, Authentication authentication) {
+        return deckService.editDeck(deck, extractUser(authentication));
     }
 
     @PostMapping("/{id}/card")
-    public Deck addCard(@PathVariable("id") final String id, @RequestBody Card card) {
-        return deckService.addCard(id, card);
+    public Deck addCard(@PathVariable("id") final String id, @RequestBody Card card, Authentication authentication) {
+        return deckService.addCard(id, card, extractUser(authentication));
     }
 
     @PutMapping("/{id}/card")
-    public Deck editCard(@PathVariable("id") final String id, @RequestBody Card card) {
-        return deckService.editCard(id, card);
+    public Deck editCard(@PathVariable("id") final String id, @RequestBody Card card, Authentication authentication) {
+        return deckService.editCard(id, card, extractUser(authentication));
     }
 
     @DeleteMapping("/{id}/card/{cardId}")
-    public Deck deleteCard(@PathVariable("id") final String id, @PathVariable("cardId") final Long cardId) {
-        return deckService.removeCard(id, cardId);
+    public Deck deleteCard(@PathVariable("id") final String id, @PathVariable("cardId") final Long cardId, Authentication authentication) {
+        return deckService.removeCard(id, cardId, extractUser(authentication));
+    }
+
+    private String extractUser(Authentication authentication) {
+        return authentication == null ? null : (String) authentication.getPrincipal();
     }
 }

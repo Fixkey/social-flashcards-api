@@ -8,4 +8,6 @@ import java.util.List;
 
 public interface DeckRepository extends MongoRepository<Deck, String> {
     Deck findDeckByPermaLinkEquals(String permaLink);
+    Deck findByNameMatches(String regex);
+    Deck findByPermaLinkMatches(String regex);
 }

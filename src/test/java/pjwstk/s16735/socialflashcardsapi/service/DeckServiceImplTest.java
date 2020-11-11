@@ -34,7 +34,7 @@ public class DeckServiceImplTest {
         DeckService deckService = new DeckServiceImpl(deckRepository);
         Deck deck = new Deck();
         deck.setName("ABC DBC1 3");
-        deckService.createDeck(deck);
+        deckService.createDeck(deck, "administrator");
 
         verify(deckRepository, atLeastOnce());
         Assert.assertEquals(deck.getPermaLink(), "abc-dbc1-3");

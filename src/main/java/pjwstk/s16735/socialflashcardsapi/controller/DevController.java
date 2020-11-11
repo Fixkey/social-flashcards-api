@@ -3,6 +3,7 @@ package pjwstk.s16735.socialflashcardsapi.controller;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -31,25 +32,45 @@ public class DevController {
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
-    @PostMapping("/populate-db")
+    // auth workaround
+    @GetMapping("/populate-db")
     public void populateDb() {
         deckService.deleteAll();
         Deck deck1 = new Deck();
         deck1.setName("Deck 1");
-//        List<Card> list = new ArrayList<>();
-        for (long i = 1; i<50; i++) {
-            Card card = new Card();
-            card.setFront(RandomStringUtils.randomAlphabetic(5, 15));
-            card.setBack(RandomStringUtils.randomAlphabetic(5, 15));
-            deck1.addCard(card);
-        }
-//        deck1.setCards(list);
-        deckService.createDeck(deck1);
+        deck1.setPrivateDeck(true);
+        deck1.addOwner("administrator");
+        populateCards(deck1, "administrator");
 
         applicationUserRepository.deleteAll();
         ApplicationUser user = new ApplicationUser();
         user.setUsername("administrator");
         user.setPassword(bCryptPasswordEncoder.encode("admin123"));
         applicationUserRepository.save(user);
+
+        populateUsers(50);
+
+        Deck deck2 = new Deck();
+        deck2.setName("Deck 2");
+        populateCards(deck2, "administrator2");
+    }
+
+    private void populateCards(Deck deck, String user) {
+        for (long i = 1; i<50; i++) {
+            Card card = new Card();
+            card.setFront(RandomStringUtils.randomAlphabetic(5, 15) + i);
+            card.setBack(RandomStringUtils.randomAlphabetic(5, 15) + i);
+            deck.addCard(card);
+        }
+        deckService.createDeck(deck, user);
+    }
+
+    private void populateUsers(int count) {
+        for (int i = 1; i<count; i++) {
+            ApplicationUser user = new ApplicationUser();
+            user.setUsername(RandomStringUtils.randomAlphabetic(10, 20) + i);
+            user.setPassword(bCryptPasswordEncoder.encode("admin123"));
+            applicationUserRepository.save(user);
+        }
     }
 }
