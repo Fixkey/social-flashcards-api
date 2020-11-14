@@ -18,5 +18,5 @@ public interface DeckService {
 
     void deleteAll();
 
-    Deck getDeckByPermaLink(String permaLink, String user);
+    Deck getDeckByPermaLink(String permaLink, String secret, String user);
 }

@@ -39,8 +39,9 @@ public class DeckServiceImpl implements DeckService {
     }
 
     @Override
-    public Deck getDeckByPermaLink(String permaLink, String user) {
+    public Deck getDeckByPermaLink(String permaLink, String secret, String user) {
         Deck deck = deckRepository.findDeckByPermaLinkEquals(permaLink);
+        if (deck.getSecret().equals(secret)) return deck;
         throwIfNotAuthorizedOrNull(user, deck, false);
         return deck;
     }

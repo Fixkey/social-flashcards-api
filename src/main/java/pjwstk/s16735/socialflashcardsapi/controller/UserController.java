@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import pjwstk.s16735.socialflashcardsapi.model.ApplicationUser;
 import pjwstk.s16735.socialflashcardsapi.repository.ApplicationUserRepository;
+import pjwstk.s16735.socialflashcardsapi.service.UserService;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -19,13 +20,10 @@ import java.util.stream.Collectors;
 @RequestMapping("/users")
 public class UserController {
 
-    private ApplicationUserRepository applicationUserRepository;
-    private BCryptPasswordEncoder bCryptPasswordEncoder;
+    private UserService userService;
 
-    public UserController(@Autowired ApplicationUserRepository applicationUserRepository,
-                          @Autowired BCryptPasswordEncoder bCryptPasswordEncoder) {
-        this.applicationUserRepository = applicationUserRepository;
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder;
+    public UserController(@Autowired UserService userService) {
+        this.userService = userService;
     }
 
     @PostMapping("/sign-up")
@@ -33,20 +31,13 @@ public class UserController {
         if (bindingResult.hasErrors()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Validation error");
         }
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-//        var z = applicationUserRepository.findByUsernameMatches("(?i)^" + user.getUsername() + "$");
-//      if (applicationUserRepository.findByUsername(user.getUsername()) != null) {
-        if (applicationUserRepository.findByUsernameMatches("(?i)^" + user.getUsername() + "$") != null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Username: \"" + user.getUsername() + "\" is taken");
-        }
-        applicationUserRepository.save(user);
+        userService.signUp(user);
         return new ResponseEntity(HttpStatus.CREATED);
     }
 
     @GetMapping("/")
     public List<String> getUsers(@RequestParam(name = "search", required = false) String search, Authentication authentication) {
-//        if (authentication == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
-        List<ApplicationUser> list = applicationUserRepository.findAllByUsernameMatches(search != null ? ("(?i)" + search) : ".");
-        return list.stream().map(e -> e.getUsername()).limit(50).collect(Collectors.toList());
+        if (authentication == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+        return userService.getUsers(search);
     }
 }
