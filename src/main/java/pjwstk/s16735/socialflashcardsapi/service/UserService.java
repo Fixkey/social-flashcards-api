@@ -7,4 +7,7 @@ import java.util.List;
 public interface UserService {
     void signUp(ApplicationUser user);
     List<String> getUsers(String search);
+
+    String getProgress(String principal);
+    void setProgress(String principal, String progress);
 }

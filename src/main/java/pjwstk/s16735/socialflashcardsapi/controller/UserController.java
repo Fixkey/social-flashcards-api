@@ -9,6 +9,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import pjwstk.s16735.socialflashcardsapi.model.ApplicationUser;
+import pjwstk.s16735.socialflashcardsapi.model.json.ProgressBody;
 import pjwstk.s16735.socialflashcardsapi.repository.ApplicationUserRepository;
 import pjwstk.s16735.socialflashcardsapi.service.UserService;
 
@@ -39,5 +40,17 @@ public class UserController {
     public List<String> getUsers(@RequestParam(name = "search", required = false) String search, Authentication authentication) {
         if (authentication == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
         return userService.getUsers(search);
+    }
+
+    @GetMapping("/progress")
+    public String getProgress(Authentication authentication) {
+        if (authentication == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+        return userService.getProgress((String) authentication.getPrincipal());
+    }
+
+    @PutMapping("/progress")
+    public void setProgress(@RequestBody ProgressBody progressBody, Authentication authentication) {
+        if (authentication == null) throw new ResponseStatusException(HttpStatus.UNAUTHORIZED);
+        userService.setProgress((String) authentication.getPrincipal(), progressBody.getProgress());
     }
 }

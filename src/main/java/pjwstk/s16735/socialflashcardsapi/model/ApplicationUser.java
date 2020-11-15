@@ -19,6 +19,9 @@ public class ApplicationUser {
     @Size(min = 6, message = "Password must be at least 6 chars long")
     private String password;
 
+    @JsonIgnore
+    private String progress;
+
     public ApplicationUser() {
     }
 
@@ -40,5 +43,13 @@ public class ApplicationUser {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getProgress() {
+        return progress;
+    }
+
+    public void setProgress(String progress) {
+        this.progress = progress;
     }
 }

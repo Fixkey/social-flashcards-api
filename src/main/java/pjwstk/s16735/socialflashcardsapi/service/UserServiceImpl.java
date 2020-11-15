@@ -44,4 +44,16 @@ public class UserServiceImpl implements UserService{
         List<ApplicationUser> list = applicationUserRepository.findAllByUsernameMatches(search != null ? ("(?i)" + search) : ".");
         return list.stream().map(e -> e.getUsername()).limit(50).collect(Collectors.toList());
     }
+
+    @Override
+    public String getProgress(String principal) {
+        return applicationUserRepository.findByUsername(principal).getProgress();
+    }
+
+    @Override
+    public void setProgress(String principal, String progress) {
+        ApplicationUser applicationUser = applicationUserRepository.findByUsername(principal);
+        applicationUser.setProgress(progress);
+        applicationUserRepository.save(applicationUser);
+    }
 }
