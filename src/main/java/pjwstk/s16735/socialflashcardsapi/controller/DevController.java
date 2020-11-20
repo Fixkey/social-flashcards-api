@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import pjwstk.s16735.socialflashcardsapi.model.ApplicationUser;
 import pjwstk.s16735.socialflashcardsapi.model.Card;
 import pjwstk.s16735.socialflashcardsapi.model.Deck;
+import pjwstk.s16735.socialflashcardsapi.model.json.DeckExtended;
 import pjwstk.s16735.socialflashcardsapi.repository.ApplicationUserRepository;
 import pjwstk.s16735.socialflashcardsapi.repository.DeckRepository;
 import pjwstk.s16735.socialflashcardsapi.service.DeckService;
@@ -36,7 +37,7 @@ public class DevController {
     @GetMapping("/populate-db")
     public void populateDb() {
         deckService.deleteAll();
-        Deck deck1 = new Deck();
+        DeckExtended deck1 = new DeckExtended();
         deck1.setName("Deck 1");
         deck1.setPrivateDeck(true);
         deck1.addOwner("administrator");
@@ -50,12 +51,12 @@ public class DevController {
 
         populateUsers(50);
 
-        Deck deck2 = new Deck();
+        DeckExtended deck2 = new DeckExtended();
         deck2.setName("Deck 2");
         populateCards(deck2, "administrator2");
     }
 
-    private void populateCards(Deck deck, String user) {
+    private void populateCards(DeckExtended deck, String user) {
         for (long i = 1; i<50; i++) {
             Card card = new Card();
             card.setFront(RandomStringUtils.randomAlphabetic(5, 15) + i);

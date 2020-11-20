@@ -3,8 +3,10 @@ package pjwstk.s16735.socialflashcardsapi.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.springframework.data.annotation.Id;
+import pjwstk.s16735.socialflashcardsapi.model.json.DeckExtended;
 
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -15,10 +17,13 @@ public class Deck {
     @Id
     private String id;
 
-    @NotEmpty(message = "Deck's name can't be empty")
-    @Size(min = 3, message = "Deck's name must be at least 3 characters long")
+    @NotEmpty(message = "Name can't be empty")
+    @Size(min = 3, message = "Name must be at least 3 characters long")
     private String name;
     private String permaLink;
+
+    private Subject subject;
+
     private List<Card> cards = new ArrayList<>();
     private Boolean privateDeck = false;
     private Set<String> owners = new HashSet<>();
@@ -97,5 +102,13 @@ public class Deck {
 
     public void setSecret(String secret) {
         this.secret = secret;
+    }
+
+    public Subject getSubject() {
+        return subject;
+    }
+
+    public void setSubject(Subject subject) {
+        this.subject = subject;
     }
 }

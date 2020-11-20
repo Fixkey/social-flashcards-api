@@ -10,4 +10,10 @@ public interface DeckRepository extends MongoRepository<Deck, String> {
     Deck findDeckByPermaLinkEquals(String permaLink);
     Deck findByNameMatches(String regex);
     Deck findByPermaLinkMatches(String regex);
+
+    @Query("{'subject.name' : ?0}")
+    List<Deck> findDecksBySubjectNameQuery(String subject);
+
+    @Query("{'subject._id' : ?0}")
+    List<Deck> findDecksBySubjectIdQuery(String id);
 }

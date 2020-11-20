@@ -7,7 +7,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 import pjwstk.s16735.socialflashcardsapi.model.Card;
 import pjwstk.s16735.socialflashcardsapi.model.Deck;
+import pjwstk.s16735.socialflashcardsapi.model.Subject;
+import pjwstk.s16735.socialflashcardsapi.model.json.DeckExtended;
 import pjwstk.s16735.socialflashcardsapi.repository.DeckRepository;
+import pjwstk.s16735.socialflashcardsapi.repository.SubjectRepository;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -15,16 +18,39 @@ import java.util.stream.Collectors;
 @Service
 public class DeckServiceImpl implements DeckService {
     private DeckRepository deckRepository;
+    private SubjectService subjectService;
 
-    public DeckServiceImpl(@Autowired DeckRepository deckRepository) {
+    public DeckServiceImpl(@Autowired DeckRepository deckRepository, @Autowired SubjectService subjectService) {
         this.deckRepository = deckRepository;
+        this.subjectService = subjectService;
     }
 
     @Override
     public List<Deck> getAllDecks(String user) {
-        return deckRepository.findAll().stream().filter(deck -> {
-            if (deck.getPrivateDeck()) {
-                return deck.getOwners().contains(user);
+
+        return filterDecksByUser(deckRepository.findAll(), user);
+    }
+
+    // candidate for caching
+    @Override
+    public List<DeckExtended> getAllDecksBySubjectShallow(String subjectId, String user) {
+        List<Deck> decks = filterDecksByUser(deckRepository.findDecksBySubjectIdQuery(subjectId), user);
+        return decks.stream().map(deck -> {
+            DeckExtended shallowDeck = new DeckExtended();
+            shallowDeck.setSecret(null);
+            shallowDeck.setPrivateDeck(deck.getPrivateDeck());
+            shallowDeck.setId(deck.getId());
+            shallowDeck.setPermaLink(deck.getPermaLink());
+            shallowDeck.setName(deck.getName());
+            shallowDeck.setCardsLength((long) deck.getCards().size());
+            return shallowDeck;
+        }).collect(Collectors.toList());
+    }
+
+    private List<Deck> filterDecksByUser(List<Deck> deck, String user) {
+        return deck.stream().filter(deck1 -> {
+            if (deck1.getPrivateDeck()) {
+                return deck1.getOwners().contains(user);
             } else {
                 return true;
             }
@@ -47,17 +73,26 @@ public class DeckServiceImpl implements DeckService {
     }
 
     @Override
-    public Deck createDeck(Deck deck, String user) {
-        deck.setId(null);
-        deck.setPermaLink(createPermaLinkFromName(deck.getName()));
-        if (deckRepository.findByNameMatches("(?i)^" + deck.getName() + "$") != null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Deck name " + deck.getName() + " is already taken");
+    public Deck createDeck(DeckExtended deckExtended, String user) {
+        deckExtended.setId(null);
+        deckExtended.setPermaLink(createPermaLinkFromName(deckExtended.getName()));
+        if (deckRepository.findByNameMatches("(?i)^" + deckExtended.getName() + "$") != null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Deck name " + deckExtended.getName() + " is already taken");
         }
-        if (deckRepository.findDeckByPermaLinkEquals("(?i)^" + deck.getPermaLink() + "$") != null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Deck permalink " + deck.getPermaLink() + " is already taken, try a different name");
+        if (deckRepository.findDeckByPermaLinkEquals("(?i)^" + deckExtended.getPermaLink() + "$") != null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Deck permalink " + deckExtended.getPermaLink() + " is already taken, try a different name");
         }
-        deck.addOwner(user);
-        Deck savedDeck = deckRepository.insert(deck);
+
+        if (deckExtended.getSubjectId() != null) {
+            Subject subject = subjectService.getSubjectById(deckExtended.getSubjectId());
+            if (subject == null) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Subject not found");
+            }
+            deckExtended.setSubject(subject);
+        }
+
+        deckExtended.addOwner(user);
+        Deck savedDeck = deckRepository.insert(deckExtended.toDeck());
         return savedDeck;
     }
 
@@ -67,6 +102,16 @@ public class DeckServiceImpl implements DeckService {
         throwIfNotAuthorizedOrNull(user, foundDeck);
         deckRepository.save(deck);
         return deck;
+    }
+
+    @Override
+    public Deck changeOwnership(Deck deck, String user) {
+        Deck foundDeck = findDeckById(deck.getId());
+        throwIfNotAuthorizedOrNull(user, foundDeck);
+        foundDeck.setPrivateDeck(deck.getPrivateDeck());
+        foundDeck.setOwners(deck.getOwners());
+        foundDeck.addOwner(user);
+        return deckRepository.save(foundDeck);
     }
 
     @Override

@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 import pjwstk.s16735.socialflashcardsapi.model.Card;
 import pjwstk.s16735.socialflashcardsapi.model.Deck;
+import pjwstk.s16735.socialflashcardsapi.model.json.DeckExtended;
 import pjwstk.s16735.socialflashcardsapi.repository.DeckRepository;
 import pjwstk.s16735.socialflashcardsapi.service.DeckService;
 
@@ -39,13 +40,18 @@ public class DeckController {
         return deckService.getDeckByPermaLink(permaLink, secret, extractUser(authentication));
     }
 
+    @GetMapping("/subject/{id}")
+    public List<DeckExtended> getDecksBySubject(@PathVariable("id") final String subjectId, Authentication authentication) {
+        return deckService.getAllDecksBySubjectShallow(subjectId, extractUser(authentication));
+    }
+
     @DeleteMapping("/{id}")
     public void removeDeckById(@PathVariable("id") final String id, Authentication authentication) {
         deckService.removeDeckById(id, extractUser(authentication));
     }
 
     @PostMapping("")
-    public Deck createDeck(@Valid @RequestBody Deck deck, Authentication authentication, BindingResult bindingResult) {
+    public Deck createDeck(@Valid @RequestBody DeckExtended deck, Authentication authentication, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Validation error");
         }
@@ -55,6 +61,11 @@ public class DeckController {
     @PutMapping("")
     public Deck editDeck(@RequestBody Deck deck, Authentication authentication) {
         return deckService.editDeck(deck, extractUser(authentication));
+    }
+
+    @PutMapping("/change-ownership")
+    public Deck changeOwnership(@RequestBody Deck deck, Authentication authentication) {
+        return deckService.changeOwnership(deck, extractUser(authentication));
     }
 
     @PostMapping("/{id}/card")
